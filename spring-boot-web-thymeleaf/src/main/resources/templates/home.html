@@ -1,12 +1,39 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Spring Boot Thymeleaf + Spring Security</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
 </head>
 <body>
 
-<h1> This is the 'Home' Page</h1>
+<!--  how to insert fragments defined in other files -->
+
+
+<!-- 
+  <div th:insert="fragments/header :: header">...</div>
+  -->
+  
+ <div th:insert="fragments/myheader :: navbar">...</div>
+ 
+<br>
+<br>
+<br>
+<br>
+ 
+ <div>
+ <h1>New test</h1>
+ </div>
+ 
+<br>
+<br>
+<br>
+<br>
+  
+  <!--  insert footer -->
+  <div th:insert="fragments/footer :: footer">...</div>
+ 
+	
 
 </body>
 </html>

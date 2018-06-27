@@ -18,5 +18,6 @@ public class HelloController {
         //the return string will be used as the name of the html file to navigate into
         return "hello";
     }
-
+	
+	
 }
