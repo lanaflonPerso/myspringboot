@@ -51,8 +51,21 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<finalName>springmysql</finalName>
+						</configuration>
+					</execution>
+				</executions>
+				
 			</plugin>
-		</plugins>
+			
+					</plugins>
 	</build>
 
 
