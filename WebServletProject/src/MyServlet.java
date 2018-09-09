@@ -37,12 +37,29 @@ public class MyServlet extends HttpServlet {
 
 		
 		
-		/*
-		 * Context path 
-		 */
-          
-        out.append("<h1>This is my JavaEE Servlet at " + request.getContextPath() + "</h1>");
+        out.append("<h1> My JavaEE Servlet</h1>");
         
+		/*
+		 * Context path & context attributes
+		 */
+        out.append("<h2> Context path and context attributes </h1>");
+        out.append("<h3> Context path and resuest</h3>");
+                 
+        out.append("The context path of the servelt: " + request.getContextPath()+"<br>");
+        out.append("The context path of the servelt: " + request.getServletPath()+"<br>");
+
+        out.append("<h3> Context attributes</h3>");
+
+        
+        Integer i =  (Integer) getServletContext().getAttribute("hit");
+        if (i== null) {
+        	getServletContext().setAttribute("hit", 1);
+        }
+        else {
+        	getServletContext().setAttribute("hit", i+1);
+        }
+        out.append("Hit count = "+ getServletContext().getAttribute("hit")); 
+        	
         
 
         /*
