@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class MyServlet
  */
 @WebServlet("/MyServlet")
+
 public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -120,8 +122,17 @@ public class MyServlet extends HttpServlet {
         
         
         /*
-         * Close body and html rags
+         * Filter - get the attributes set in the Filter class
          */
+        out.append("<h2> Filter - get the attributes set in the Filter class </h2>");
+        ee = (Enumeration) request.getAttributeNames();
+        while (ee.hasMoreElements()) {
+
+            String att = (String) ee.nextElement();
+            tmp = (String) request.getAttribute(att);
+            out.println(att + "= " + tmp + "<br>");
+        }
+        
 	}
 
 	/**
